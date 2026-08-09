@@ -5,293 +5,333 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>EventsNPeeps | Connecting People, Creating Memories</title>
+<title>EventsNPeeps | Meet People &amp; Discover Local Events</title>
+<meta name="description" content="EventsNPeeps is the social events app to meet new people, discover local events, join groups, host events, and build authentic, real-life connections. Download free on Google Play.">
+
+<!-- Social sharing preview (Open Graph) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="EventsNPeeps | Meet People &amp; Discover Local Events">
+<meta property="og:description" content="Meet new people, discover local events, join groups, and build real-life connections. Download EventsNPeeps free on Google Play.">
+<meta property="og:url" content="https://www.eventsnpeeps.com/">
+<meta property="og:image" content="https://www.eventsnpeeps.com/images/homepagesocial.png">
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+:root{
+  --teal:#00b7b7;
+  --navy:#263648;
+  --ink:#333;
+  --muted:#5c6b7a;
+  --bg-soft:#f6f9fb;
+  --card-shadow:0 4px 15px rgba(0,0,0,.08);
 }
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+html{scroll-behavior:smooth;}
 
 body{
-font-family:Arial, Helvetica, sans-serif;
-color:#333;
-line-height:1.6;
+  font-family:Arial, Helvetica, sans-serif;
+  color:var(--ink);
+  line-height:1.6;
 }
 
+/* ---------- Hero (full-width header band) ---------- */
 .hero{
-
-height:100vh;
-
-background:
-linear-gradient(
-rgba(0,0,0,.45),
-rgba(0,0,0,.45)
-),
-url("./images/homepagesocial.png");
-
-background-size:cover;
-background-position:center;
-
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
-color:white;
+  min-height:80vh;
+  background:
+    linear-gradient(rgba(0,0,0,.06), rgba(0,0,0,.12)),
+    linear-gradient(135deg, #2cc5c5 0%, #369cb2 47%, #3a5670 100%);
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:80px 20px;
+  text-shadow:0 1px 2px rgba(0,0,0,.15);
 }
 
-.hero-content{
-max-width:850px;
-}
+.hero-inner{max-width:820px;}
 
 .hero h1{
-font-size:4rem;
-font-weight:300;
-margin-bottom:20px;
+  font-size:3rem;
+  font-weight:600;
+  margin-bottom:20px;
 }
 
 .hero p{
-font-size:1.4rem;
-margin-bottom:25px;
+  font-size:1.15rem;
+  margin-bottom:16px;
+  color:#f3fbfb;
 }
 
-.button{
-
-display:inline-block;
-
-padding:14px 28px;
-
-background:#00b7b7;
-
-color:white;
-
-text-decoration:none;
-
-border-radius:8px;
-
-font-weight:bold;
-
-transition:.3s;
+.hero-tagline{
+  margin:28px auto 0;
+  max-width:620px;
+  padding-top:24px;
+  border-top:1px solid rgba(255,255,255,.30);
+  font-size:1.18rem;
+  font-weight:600;
 }
 
-.button:hover{
-opacity:.9;
-}
-
+/* ---------- Generic section ---------- */
 .section{
-
-padding:80px 20px;
-text-align:center;
-
+  padding:70px 20px;
+  text-align:center;
 }
 
+.section-alt{background:var(--bg-soft);}
+
+.container{max-width:1000px;margin:0 auto;}
+
+.section h2{
+  font-size:2rem;
+  font-weight:600;
+  margin-bottom:18px;
+  color:var(--navy);
+}
+
+/* ---------- Download ---------- */
+.download{
+  padding:48px 20px 70px;
+  text-align:center;
+}
+
+.store-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:14px;
+  background:#000;
+  color:#fff;
+  text-decoration:none;
+  padding:12px 26px;
+  border-radius:8px;
+  border:1px solid #a6a6a6;
+  transition:.25s;
+}
+.store-btn:hover{background:#151515;transform:translateY(-1px);}
+.store-btn svg{width:27px;height:27px;flex:none;}
+.store-btn .label{text-align:left;line-height:1.1;}
+.store-btn .small{display:block;font-size:.7rem;opacity:.85;letter-spacing:.5px;text-transform:uppercase;}
+.store-btn .big{display:block;font-size:1.25rem;font-weight:bold;}
+
+.store-note{margin-top:14px;font-size:.9rem;color:var(--muted);}
+
+/* ---------- Feature blocks ---------- */
 .features{
-
-display:grid;
-
-grid-template-columns:
-repeat(auto-fit,minmax(220px,1fr));
-
-gap:30px;
-
-margin-top:50px;
-
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:26px;
+  margin-top:46px;
+  text-align:left;
 }
 
+.feature-card{
+  background:#fff;
+  padding:30px;
+  border-radius:12px;
+  box-shadow:var(--card-shadow);
+  border-top:4px solid var(--teal);
+}
+
+.feature-card h3{
+  font-size:1.2rem;
+  color:var(--navy);
+  margin-bottom:14px;
+}
+
+.feature-card ul{list-style:none;}
+.feature-card li{
+  position:relative;
+  padding-left:26px;
+  margin-bottom:10px;
+}
+.feature-card li::before{
+  content:"\2713";
+  position:absolute;
+  left:0;
+  color:var(--teal);
+  font-weight:bold;
+}
+
+/* ---------- Points callout ---------- */
+.points{
+  background:linear-gradient(135deg,#00b7b7,#178a9e);
+  color:#fff;
+  text-align:center;
+  padding:54px 20px;
+}
+.points .container{max-width:760px;}
+.points .emoji{font-size:2.4rem;}
+.points h2{color:#fff;margin:8px 0 12px;font-size:2rem;font-weight:600;}
+.points p{font-size:1.15rem;}
+
+/* ---------- Emoji pillar cards ---------- */
+.pillars{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:30px;
+  margin-top:46px;
+}
 .card{
-
-padding:30px;
-
-border-radius:12px;
-
-box-shadow:
-0 4px 15px rgba(0,0,0,.08);
-
+  background:#fff;
+  padding:34px 26px;
+  border-radius:12px;
+  box-shadow:var(--card-shadow);
 }
+.card h3{font-size:1.35rem;margin-bottom:12px;color:var(--navy);}
+.card p{color:var(--muted);}
 
+/* ---------- Footer ---------- */
 .footer{
-
-background:#263648;
-
-color:white;
-
-padding:60px 40px;
-
-display:flex;
-
-flex-direction:column;
-
-align-items:flex-end;
-
+  background:
+    linear-gradient(rgba(0,0,0,.06), rgba(0,0,0,.12)),
+    linear-gradient(135deg, #2cc5c5 0%, #369cb2 47%, #3a5670 100%);
+  color:#fff;
+  padding:60px 40px;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  text-shadow:0 1px 2px rgba(0,0,0,.15);
 }
-
-.footer-content{
-
-width:400px;
-
-text-align:left;
-
-}
-
+.footer-inner{width:400px;text-align:left;}
+.footer h2{margin-bottom:8px;}
+.footer a{color:#56b5ff;text-decoration:none;}
+.footer a:hover{text-decoration:underline;}
+.contact{line-height:1.8;}
 .copyright{
-
-margin-top:50px;
-
-font-size:0.95rem;
-
-opacity:.9;
-
-width:100%;
-
-text-align:center;
-
-}
-
-.footer a{
-c
-olor:#56b5ff;
-
-text-decoration:none;
-
-}
-
-.contact{
-
-margin-top:25px;
-
-line-height:1.8;
-
+  margin-top:50px;
+  font-size:.95rem;
+  opacity:.9;
+  width:100%;
+  text-align:center;
 }
 
 @media(max-width:768px){
-
-.footer{
-
-align-items:center;
-
-padding:50px 25px;
-
+  .hero{min-height:auto;padding:70px 22px;}
+  .hero h1{font-size:2.2rem;}
+  .hero p{font-size:1.05rem;}
+  .footer{align-items:center;padding:50px 25px;}
+  .footer-inner{width:100%;max-width:420px;text-align:center;}
 }
-
-.footer-content{
-
-width:100%;
-
-max-width:420px;
-
-}
-
-}
-
 </style>
 
 </head>
 
 <body>
 
-<section class="hero">
+<!-- ===================== HERO (full-width header band) ===================== -->
+<header class="hero">
+  <div class="hero-inner">
+    <h1>Welcome to Events &amp; Peeps</h1>
+    <p>The social events app designed to help you meet new people, discover local events, and build authentic, real-life connections.</p>
+    <p>EventsNPeeps helps people discover communities, join local groups, attend events, and connect with others who share similar interests.</p>
+    <p>Whether you're looking to expand your social circle, explore hobbies, enrich your social life, meet new people, or create your own community, EventsNPeeps makes hosting events and connecting easier.</p>
+    <p class="hero-tagline">Your community for events and connections. Discover events, join groups and connect with people.</p>
+  </div>
+</header>
 
-<div class="hero-content">
-
-<h1>Connecting People, Creating Memories</h1>
-
-<p>
-Your community for events and connections.
-Discover events, connect with people,
-create memories.
-</p>
-
-<a href="#coming-soon" class="button">
-Coming Soon
-</a>
-
-</div>
-
+<!-- ===================== DOWNLOAD ===================== -->
+<section class="download">
+  <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.eventsnpeeps.event_management" target="_blank" rel="noopener">
+    <svg viewBox="0 0 46 46" aria-hidden="true">
+      <polygon fill="#00c3ff" points="6,4 23,13.5 23,23 6,23"/>
+      <polygon fill="#ffce00" points="23,13.5 40,23 23,23"/>
+      <polygon fill="#00e676" points="6,42 23,32.5 23,23 6,23"/>
+      <polygon fill="#ff424b" points="23,32.5 40,23 23,23"/>
+    </svg>
+    <span class="label">
+      <span class="small">Get it on</span>
+      <span class="big">Google Play</span>
+    </span>
+  </a>
+  <p class="store-note">Free to download on Android. Coming soon to the App Store.</p>
+  <!-- When Apple approves, add the App Store badge/link right here. -->
 </section>
 
-<section id="coming-soon" class="section">
+<!-- ===================== FEATURES ===================== -->
+<section class="section section-alt">
+  <div class="container">
+    <h2>What you can do on Events &amp; Peeps</h2>
+    <div class="features">
 
-<h2>Coming Soon</h2>
+      <div class="feature-card">
+        <h3>&#129302; MeetAI &mdash; Your Personal Event &amp; Group Assistant</h3>
+        <ul>
+          <li>Get smart assistance with creating events and groups</li>
+          <li>Easily learn about app features, subscription details, and points</li>
+          <li>Get local recommendations, ideas, and answers to your planning questions</li>
+        </ul>
+      </div>
 
-<p style="margin-top:20px;max-width:700px;margin-left:auto;margin-right:auto;">
+      <div class="feature-card">
+        <h3>&#129517; Discover and Connect</h3>
+        <ul>
+          <li>Find local events and groups based on your interests</li>
+          <li>Meet people in your city through community activities</li>
+          <li>Explore groups and events tailored to your location</li>
+        </ul>
+      </div>
 
-EventsNPeeps is your next destination for meaningful
-connections. Stay tuned as we prepare to launch
-an innovative platform that brings people together.
+      <div class="feature-card">
+        <h3>&#128588; Create Communities &amp; Host Events</h3>
+        <ul>
+          <li>Create your own groups, host free events and bring people together</li>
+          <li>Host local events and invite others to join</li>
+          <li>Build communities around hobbies, interests, and activities</li>
+        </ul>
+      </div>
 
-</p>
-
-<div class="features">
-
-<div class="card">
-
-<h3>⭐ Connect</h3>
-
-<p>
-Meet like-minded individuals and build lasting relationships.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>💬 Share</h3>
-
-<p>
-Share experiences and create meaningful memories.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>🎉 Celebrate</h3>
-
-<p>
-Attend events and discover new communities.
-</p>
-
-</div>
-
-</div>
-
+    </div>
+  </div>
 </section>
 
+<!-- ===================== POINTS / REWARDS ===================== -->
+<section class="points">
+  <div class="container">
+    <div class="emoji">&#127942;</div>
+    <h2>Earn rewards through participation</h2>
+    <p>EventsNPeeps rewards real-world participation. Earn points through participation to unlock subscription rewards and discounts!</p>
+  </div>
+</section>
+
+<!-- ===================== PILLARS ===================== -->
+<section class="section">
+  <div class="container">
+    <div class="pillars">
+
+      <div class="card">
+        <h3>&#11088; Connect</h3>
+        <p>Meet like-minded individuals and build lasting relationships.</p>
+      </div>
+
+      <div class="card">
+        <h3>&#128172; Share</h3>
+        <p>Share experiences and create memories and meaningful connections.</p>
+      </div>
+
+      <div class="card">
+        <h3>&#127881; Celebrate</h3>
+        <p>Attend events, meet people and discover new communities.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
 <footer class="footer">
-
-<div class="contact">
-<h2>Contact Us</h2>
-
-<p>
-Questions? We'd love to hear from you.
-</p>
-
-<br>
-
-<p>
-Email:
-<a href="mailto:support@eventsnpeeps.com">
-support@eventsnpeeps.com
-</a>
-</p>
-
-<p style="margin-top:10px;">
-Response time: Within 48 hours
-</p>
-
-</div>
-
-</div>
-
-<div class="copyright">
-
-<p>
-© 2026 EventsNPeeps. All rights reserved.
-</p>
-
+  <div class="footer-inner">
+    <div class="contact">
+      <h2>Contact Us</h2>
+      <p>Questions? We'd love to hear from you.</p>
+      <br>
+      <p>Email: <a href="mailto:support@eventsnpeeps.com">support@eventsnpeeps.com</a></p>
+      <p style="margin-top:10px;">Response time: Within 48 hours</p>
+    </div>
+  </div>
+  <div class="copyright">
+    <p>&copy; 2026 EventsNPeeps. All rights reserved.</p>
+  </div>
 </footer>
 
 </body>
