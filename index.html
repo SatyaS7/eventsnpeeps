@@ -256,24 +256,38 @@ body{
   background:
     linear-gradient(rgba(0,0,0,.06), rgba(0,0,0,.12)),
     linear-gradient(135deg, #2cc5c5 0%, #369cb2 47%, #3a5670 100%);
-  color:#fff;
-  padding:60px 40px;
-  display:flex;
-  flex-direction:column;
-  align-items:flex-end;
+  color:#ffffff;
+  padding:32px 24px;
+  font-size:0.9rem;
   text-shadow:0 1px 2px rgba(0,0,0,.15);
 }
-.footer-inner{width:400px;text-align:left;}
-.footer h2{margin-bottom:8px;}
-.footer a{color:#56b5ff;text-decoration:none;}
-.footer a:hover{text-decoration:underline;}
-.contact{line-height:1.8;}
-.copyright{
-  margin-top:50px;
-  font-size:.95rem;
-  opacity:.9;
-  width:100%;
-  text-align:center;
+.footer-container{
+  max-width:1100px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:16px;
+}
+.footer-copyright{
+  margin:0;
+  color:rgba(255,255,255,0.95);
+}
+.footer-links{
+  display:flex;
+  align-items:center;
+  gap:24px;
+  flex-wrap:wrap;
+}
+.footer-links a{
+  color:rgba(255,255,255,0.9);
+  text-decoration:none;
+  transition:all 0.2s ease;
+}
+.footer-links a:hover{
+  color:#ffffff;
+  text-decoration:underline;
 }
 
 @media(max-width:768px){
@@ -281,8 +295,15 @@ body{
   .hero h1{font-size:2.2rem;}
   .hero p{font-size:1.05rem;}
   .hero-logo-badge{width:80px;height:80px;}
-  .footer{align-items:center;padding:50px 25px;}
-  .footer-inner{width:100%;max-width:420px;text-align:center;}
+  .footer-container{
+    flex-direction:column;
+    text-align:center;
+    gap:14px;
+  }
+  .footer-links{
+    justify-content:center;
+    gap:16px;
+  }
 }
 </style>
 
@@ -314,28 +335,28 @@ body{
 
 <!-- ===================== DOWNLOAD ===================== -->
 <section id="download" class="download">
-	<div class="store-buttons">
-	  <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.eventsnpeeps.event_management" target="_blank" rel="noopener">
-		<svg viewBox="0 0 46 46" aria-hidden="true">
-		  <polygon fill="#00c3ff" points="6,4 23,13.5 23,23 6,23"/>
-		  <polygon fill="#ffce00" points="23,13.5 40,23 23,23"/>
-		  <polygon fill="#00e676" points="6,42 23,32.5 23,23 6,23"/>
-		  <polygon fill="#ff424b" points="23,32.5 40,23 23,23"/>
-		</svg>
-		<span class="label">
-		  <span class="small">Get it on</span>
-		  <span class="big">Google Play</span>
-		</span>
-	  </a>
-	  
-	  <a class="store-btn" href="https://apps.apple.com/us/app/eventsnpeeps/id6791054680" target="_blank" rel="noopener">
-		 <svg class="apple" viewBox="0 0 384 512" aria-hidden="true"><path fill="#fff" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-		<span class="label">
-		  <span class="small">Download on the</span>
-		  <span class="big">App Store</span>
-		</span>
-	  </a>
-	</div>
+  <div class="store-buttons">
+    <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.eventsnpeeps.event_management" target="_blank" rel="noopener">
+      <svg viewBox="0 0 46 46" aria-hidden="true">
+        <polygon fill="#00c3ff" points="6,4 23,13.5 23,23 6,23"/>
+        <polygon fill="#ffce00" points="23,13.5 40,23 23,23"/>
+        <polygon fill="#00e676" points="6,42 23,32.5 23,23 6,23"/>
+        <polygon fill="#ff424b" points="23,32.5 40,23 23,23"/>
+      </svg>
+      <span class="label">
+        <span class="small">Get it on</span>
+        <span class="big">Google Play</span>
+      </span>
+    </a>
+    
+    <a class="store-btn" href="https://apps.apple.com/us/app/eventsnpeeps/id6791054680" target="_blank" rel="noopener">
+      <svg class="apple" viewBox="0 0 384 512" aria-hidden="true"><path fill="#fff" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+      <span class="label">
+        <span class="small">Download on the</span>
+        <span class="big">App Store</span>
+      </span>
+    </a>
+  </div>
   <p class="store-note">Free to download on Play Store and App Store.</p>
 </section>
 
@@ -411,17 +432,13 @@ body{
 
 <!-- ===================== FOOTER ===================== -->
 <footer class="footer">
-  <div class="footer-inner">
-    <div class="contact">
-      <h2>Contact Us</h2>
-      <p>Questions? We'd love to hear from you.</p>
-      <br>
-      <p>Email: <a href="mailto:support@eventsnpeeps.com">support@eventsnpeeps.com</a></p>
-      <p style="margin-top:10px;">Response time: Within 48 hours</p>
+  <div class="footer-container">
+    <p class="footer-copyright">&copy; 2026 Thirty Seven Labs Inc. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="terms-of-service/index.html">Terms of Service</a>
+      <a href="privacy-policy/index.html">Privacy Policy</a>
+      <a href="mailto:support@eventsnpeeps.com">Contact</a>
     </div>
-  </div>
-  <div class="copyright">
-    <p>&copy; 2026 EventsNPeeps. All rights reserved.</p>
   </div>
 </footer>
 
