@@ -8,12 +8,16 @@
 <title>EventsNPeeps | Meet People &amp; Discover Local Events</title>
 <meta name="description" content="EventsNPeeps is the social events app to meet new people, discover local events, join groups, host events, and build authentic, real-life connections. Download free on Google Play.">
 
+<!-- Favicons -->
+<link rel="icon" type="image/png" sizes="48x48" href="./eventsnpeeps_favicon_48x48.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./eventsnpeeps_logo_300x300.png">
+
 <!-- Social sharing preview (Open Graph) -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="EventsNPeeps | Meet People &amp; Discover Local Events">
 <meta property="og:description" content="Meet new people, discover local events, join groups, and build real-life connections. Download EventsNPeeps free on Google Play.">
 <meta property="og:url" content="https://www.eventsnpeeps.com/">
-<meta property="og:image" content="https://www.eventsnpeeps.com/images/homepagesocial.png">
+<meta property="og:image" content="https://www.eventsnpeeps.com/eventsnpeeps_logo_300x300.png">
 
 <style>
 :root{
@@ -35,6 +39,53 @@ body{
   line-height:1.6;
 }
 
+/* ---------- Top Navbar ---------- */
+.navbar{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255, 255, 255, 0.95);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid #e5e9ec;
+  padding:12px 24px;
+}
+.nav-container{
+  max-width:1100px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.nav-brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+}
+.nav-logo{
+  width:36px;
+  height:36px;
+  border-radius:8px;
+  object-fit:contain;
+}
+.nav-title{
+  font-size:1.25rem;
+  font-weight:700;
+  color:var(--navy);
+  letter-spacing:-0.3px;
+}
+.nav-cta{
+  background:var(--teal);
+  color:#fff;
+  text-decoration:none;
+  padding:8px 18px;
+  border-radius:6px;
+  font-size:0.9rem;
+  font-weight:600;
+  transition:background 0.2s ease;
+}
+.nav-cta:hover{background:#009b9b;}
+
 /* ---------- Hero (full-width header band) ---------- */
 .hero{
   min-height:80vh;
@@ -46,11 +97,23 @@ body{
   align-items:center;
   justify-content:center;
   text-align:center;
-  padding:80px 20px;
+  padding:70px 20px 80px;
   text-shadow:0 1px 2px rgba(0,0,0,.15);
 }
 
 .hero-inner{max-width:820px;}
+
+.hero-logo-badge{
+  width:100px;
+  height:100px;
+  border-radius:24px;
+  background:#fff;
+  padding:8px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.2);
+  margin:0 auto 24px;
+  display:block;
+  object-fit:contain;
+}
 
 .hero h1{
   font-size:3rem;
@@ -94,6 +157,13 @@ body{
 .download{
   padding:48px 20px 70px;
   text-align:center;
+}
+
+.store-buttons{
+  display:flex;
+  gap:16px;
+  justify-content:center;
+  flex-wrap:wrap;
 }
 
 .store-btn{
@@ -207,9 +277,10 @@ body{
 }
 
 @media(max-width:768px){
-  .hero{min-height:auto;padding:70px 22px;}
+  .hero{min-height:auto;padding:60px 22px;}
   .hero h1{font-size:2.2rem;}
   .hero p{font-size:1.05rem;}
+  .hero-logo-badge{width:80px;height:80px;}
   .footer{align-items:center;padding:50px 25px;}
   .footer-inner{width:100%;max-width:420px;text-align:center;}
 }
@@ -219,7 +290,18 @@ body{
 
 <body>
 
-<!-- ===================== HERO (full-width header band) ===================== -->
+<!-- ===================== NAVBAR ===================== -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="#" class="nav-brand">
+      <img src="./eventsnpeeps_logo_300x300.png" alt="EventsNPeeps Logo" class="nav-logo">
+      <span class="nav-title">EventsNPeeps</span>
+    </a>
+    <a href="#download" class="nav-cta">Get App</a>
+  </div>
+</nav>
+
+<!-- ===================== HERO ===================== -->
 <header class="hero">
   <div class="hero-inner">
     <h1>Welcome to Events &amp; Peeps</h1>
@@ -231,21 +313,30 @@ body{
 </header>
 
 <!-- ===================== DOWNLOAD ===================== -->
-<section class="download">
-  <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.eventsnpeeps.event_management" target="_blank" rel="noopener">
-    <svg viewBox="0 0 46 46" aria-hidden="true">
-      <polygon fill="#00c3ff" points="6,4 23,13.5 23,23 6,23"/>
-      <polygon fill="#ffce00" points="23,13.5 40,23 23,23"/>
-      <polygon fill="#00e676" points="6,42 23,32.5 23,23 6,23"/>
-      <polygon fill="#ff424b" points="23,32.5 40,23 23,23"/>
-    </svg>
-    <span class="label">
-      <span class="small">Get it on</span>
-      <span class="big">Google Play</span>
-    </span>
-  </a>
+<section id="download" class="download">
+	<div class="store-buttons">
+	  <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.eventsnpeeps.event_management" target="_blank" rel="noopener">
+		<svg viewBox="0 0 46 46" aria-hidden="true">
+		  <polygon fill="#00c3ff" points="6,4 23,13.5 23,23 6,23"/>
+		  <polygon fill="#ffce00" points="23,13.5 40,23 23,23"/>
+		  <polygon fill="#00e676" points="6,42 23,32.5 23,23 6,23"/>
+		  <polygon fill="#ff424b" points="23,32.5 40,23 23,23"/>
+		</svg>
+		<span class="label">
+		  <span class="small">Get it on</span>
+		  <span class="big">Google Play</span>
+		</span>
+	  </a>
+	  
+	  <a class="store-btn" href="https://apps.apple.com/us/app/eventsnpeeps/id6791054680" target="_blank" rel="noopener">
+		 <svg class="apple" viewBox="0 0 384 512" aria-hidden="true"><path fill="#fff" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+		<span class="label">
+		  <span class="small">Download on the</span>
+		  <span class="big">App Store</span>
+		</span>
+	  </a>
+	</div>
   <p class="store-note">Free to download on Android. Coming soon to the App Store.</p>
-  <!-- When Apple approves, add the App Store badge/link right here. -->
 </section>
 
 <!-- ===================== FEATURES ===================== -->
